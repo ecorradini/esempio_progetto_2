@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ombrellone_1",
+    "nome": "Ombrellone prima fila",
+    "tipo": "Ombrellone",
+    "posizione": "Prima fila",
+    "prezzo": 30.0
+  },
+  {
+    "id": "ombrellone_2",
+    "nome": "Ombrellone seconda fila",
+    "tipo": "Ombrellone",
+    "posizione": "Seconda fila",
+    "prezzo": 25.0
+  },
+  {
+    "id": "ombrellone_3",
+    "nome": "Ombrellone terza fila",
+    "tipo": "Ombrellone",
+    "posizione": "Terza fila",
+    "prezzo": 20.0
+  },
+  {
+    "id": "ombrellone_4",
+    "nome": "Ombrellone quarta fila",
+    "tipo": "Ombrellone",
+    "posizione": "Quarta fila",
+    "prezzo": 15.0
+  },
+  {
+    "id": "cabina_1",
+    "nome": "Cabina 1",
+    "tipo": "Cabina",
+    "posizione": "Stabilimento",
+    "prezzo": 50.0
+  },
+  {
+    "id": "cabina_2",
+    "nome": "Cabina 2",
+    "tipo": "Cabina",
+    "posizione": "Stabilimento",
+    "prezzo": 50.0
+  }
+]
