@@ -12,6 +12,9 @@ class ControlloreListaClienti():
     def get_lista_dei_clienti(self):
         return self.model.get_lista_clienti()
 
+    def get_cliente_by_index(self, index):
+        return self.model.get_cliente_by_index(index)
+
     def elimina_cliente_by_id(self, id):
         self.model.rimuovi_cliente_by_id(id)
 

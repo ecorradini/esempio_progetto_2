@@ -1,6 +1,7 @@
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5.QtWidgets import QWidget, QHBoxLayout, QListView, QVBoxLayout, QPushButton
 
+from cliente.views.VistaCliente import VistaCliente
 from listaclienti.controller.ControlloreListaClienti import ControlloreListaClienti
 from listaclienti.views.VistaInserisciCliente import VistaInserisciCliente
 
@@ -18,7 +19,7 @@ class VistaListaClienti(QWidget):
 
         buttons_layout = QVBoxLayout()
         open_button = QPushButton("Apri")
-        # open_button.clicked.connect()
+        open_button.clicked.connect(self.show_selected_info)
         buttons_layout.addWidget(open_button)
 
         new_button = QPushButton("Nuovo")
@@ -30,6 +31,12 @@ class VistaListaClienti(QWidget):
         self.setLayout(h_layout)
         self.resize(600,300)
         self.setWindowTitle("Lista Clienti")
+
+    def show_selected_info(self):
+        selected = self.list_view.selectedIndexes()[0].row()
+        cliente_selezionato = self.controller.get_cliente_by_index(selected)
+        self.vista_cliente = VistaCliente(cliente_selezionato, self.controller.elimina_cliente_by_id, self.update_ui)
+        self.vista_cliente.show()
 
     def show_new_cliente(self):
         self.vista_inserisci_cliente = VistaInserisciCliente(self.controller, self.update_ui)
