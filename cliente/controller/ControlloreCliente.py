@@ -27,7 +27,7 @@ class ControlloreCliente():
         return self.model.eta
 
     def get_abbonamento_cliente(self):
-        return self.model.abbonamento
+        return self.model.get_abbonamento()
 
     def aggiungi_nuovo_abbonamento_cliente(self, abbonamento):
         self.model.add_abbonamento(abbonamento)
