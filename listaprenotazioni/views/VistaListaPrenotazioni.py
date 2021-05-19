@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QWidget, QHBoxLayout, QListView, QVBoxLayout, QPushB
 
 from listaprenotazioni.controller.ControlloreListaPrenotazioni import ControlloreListaPrenotazioni
 from listaprenotazioni.views.VistaInserisciPrenotazione import VistaInserisciPrenotazione
+from prenotazione.views.VistaPrenotazione import VistaPrenotazione
 
 
 class VistaListaPrenotazioni(QWidget):
@@ -46,8 +47,8 @@ class VistaListaPrenotazioni(QWidget):
         if(len(self.list_view.selectedIndexes()) > 0):
             selected = self.list_view.selectedIndexes()[0].row()
             prenotazione_selezionata = self.controller.get_prenotazione_by_index(selected)
-            #self.vista_dipendente = VistaDipendente(dipendente_selezionato, self.controller.elimina_dipendente_by_id, self.update_ui)
-            #self.vista_dipendente.show()
+            self.vista_prenotazione = VistaPrenotazione(prenotazione_selezionata, self.controller.elimina_prenotazione_by_id, self.update_ui)
+            self.vista_prenotazione.show()
 
     def show_new_prenotazione(self):
         self.vista_inserisci_prenotazione = VistaInserisciPrenotazione(self.controller, self.update_ui)

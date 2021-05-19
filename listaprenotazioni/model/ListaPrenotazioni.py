@@ -15,6 +15,8 @@ class ListaPrenotazioni():
 
     def rimuovi_prenotazione_by_id(self, id):
         for prenotazione in self.lista_prenotazioni:
+            print(prenotazione.id)
+            print(id)
             if prenotazione.id == id:
                 prenotazione.servizio.disponibile = True
                 self.lista_prenotazioni.remove(prenotazione)
