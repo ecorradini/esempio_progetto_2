@@ -7,7 +7,7 @@ class VistaPrenotazione(QWidget):
     def __init__(self, prenotazione, disdici_prenotazione, elimina_callback, parent=None):
         super(VistaPrenotazione, self).__init__(parent)
         self.controller = ControllorePrenotazione(prenotazione)
-        self.disdisci_prenotazione = disdici_prenotazione
+        self.disdici_prenotazione = disdici_prenotazione
         self.elimina_callback = elimina_callback
 
         v_layout = QVBoxLayout()
@@ -42,6 +42,6 @@ class VistaPrenotazione(QWidget):
         self.setWindowTitle(self.controller.get_servizio_prenotazione().nome)
 
     def disdici_prenotazione_click(self):
-        self.disdisci_prenotazione(self.controller.get_id_prenotazione())
+        self.disdici_prenotazione(self.controller.get_id_prenotazione())
         self.elimina_callback()
         self.close()
